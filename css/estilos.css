@@ -231,22 +231,32 @@ p, a{
     .contenido-encabezado, .formulario-encabezado{
             flex: 0 0 calc(50% - 1rem);
     }
+
 }
 .texto-encabezado h1{
-    font-size:3rem;
+    font-size: 5rem;
     text-align: center;
     color: var(--azulClaro);
-    padding-top: 7rem;
+    padding: 5rem;
 }
+
 @media(min-width: 768px) {
     .texto-encabezado h1{
-        font-size: 7rem;
-        text-align: left;
-        padding-top: 0;
+        font-size: 5rem;
+        text-align: center;
+        padding: 5rem;
     }
 
 }
+@media(min-width: 769px) {
+    .texto-encabezado h1{
+        font-size: 7rem;
+        text-align: center;
+        color: var(--azulClaro);
+        padding: 7rem;
+    }
 
+}
 .formulario-encabezado{
     background-color: var(--morado);
     display: flex;
@@ -645,13 +655,13 @@ p, a{
         
     }
     .servicios {
-        padding-top: 15rem;
+        padding-top: 5rem;
     }
     .servicios h2{
         font-size: 5rem;
         text-align: center;
         color: var(--azulClaro);
-        margin-top: 1rem;
+        margin-top: 9rem;
     }
     .servicio{
         width: 200px;
@@ -672,7 +682,8 @@ p, a{
         font-size: 3rem;
         box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
         transition: all .3s ease-in-out;
-    }
+        margin-top: 2.5rem;
+}
     .servicio h3{
         font-size: 2.2rem;
         color: var(--azulOscuro);
@@ -715,12 +726,22 @@ p, a{
 
 /** Fin de los Servicios**/
 
+
+
+
+
+
 /**Seccion contacto**/
 
+.contenido-contacto{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
 .contacto{
-    padding-top: 10rem;
+    padding-top: 5rem;
 
 }
+
 .contacto h2{
     text-align: center;
     color: var(--azulClaro);
@@ -738,6 +759,7 @@ p, a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 
 }
 .informacion-contacto::before{
@@ -790,7 +812,9 @@ p, a{
     padding: 1.2rem 1rem;
     font-family: var(--parrafos);
 }
-
+.input-contacto :hover{
+    background-color: var(--naranjo);
+}
 .input-contacto input, .input-contacto textarea{
     width: 100%;
     outline: none;
@@ -804,15 +828,27 @@ p, a{
     width: auto;
     padding: 1rem 3rem;
     transition: background-color .3s ease-in-out;
+    -webkit-transition: background-color .3s ease-in-out;
+    -moz-transition: background-color .3s ease-in-out;
+    -ms-transition: background-color .3s ease-in-out;
+    -o-transition: background-color .3s ease-in-out;
 }
 .input-contacto input[type="submit"]{
     color: var(--blanco);
+
 }
+    
+    
 .input-contacto input[type="submit"]:hover{
     background-color: var(--naranjo);
     color: var(--azulClaro);
 }
 
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .footer .logo h2, .footer p{
     text-align: center;
 }
@@ -820,7 +856,7 @@ p, a{
 .imagen-whatsaap {
     max-width: 30px; /* Establece el tamaño máximo del contenedor */
     position: absolute; /* Posiciona la imagen de forma absoluta con respecto al contenedor padre */
-    top: 50%; /* Coloca la imagen en el centro vertical del contenedor */
+    top: 47%; /* Coloca la imagen en el centro vertical del contenedor */
     transform: translateY(-50%); /* Ajusta la posición vertical de la imagen */
     right: 5px; /* Ajusta la distancia desde el borde derecho según sea necesario */
 }
@@ -834,57 +870,69 @@ p, a{
     margin-top: 115px;
 }
 
-  
-.imagen-mail {
-      max-width: 30px; /* Establece el tamaño máximo del contenedor */
-      position: absolute; /* Posiciona la imagen de forma absoluta con respecto al contenedor padre */
-      top: 50%; /* Coloca la imagen en el centro vertical del contenedor */
-      transform: translateY(-50%); /* Ajusta la posición vertical de la imagen */
-      right: 5px; /* Ajusta la distancia desde el borde derecho según sea necesario */
+  .imagen-mail {
+      max-width: 30px;
+      position: absolute;
+      top: 47%;
+      transform: translateY(-50%);
+      right: 8px;
       text-align: center;
 }
       
 .imagen-mail img {
       max-width: 40px; /* Establece el tamaño máximo del contenedor */
       display: inline-block; /* Permite ajustar el vertical-align */
-      margin-right: 5px; /* Ajusta el espacio entre la imagen y el texto según sea necesario */
-      margin-left: -133rem;
-      margin-top: 263px;
+      margin-right: 8px; /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+      margin-left: -129rem;
+      margin-top: -25px;
       text-align: center;
 }
   
-@media screen and (max-width: 768px) and (min-width:480px) {
+@media screen and (min-width: 600px) and (max-width:768px) {
+   
     .contenido-contacto{
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        max-width: 800px; /* Establece el ancho máximo deseado */
-        width: 100%; /* Para que se ajuste al ancho máximo y sea responsivo */
-        margin: 0 auto; /* Centra el contenedor horizontalmente */
-    /* También puedes ajustar la altura si es necesario */
-        height: 320.5px; 
+    }
+    .imagen-whatsaap {
+        display: block;
+        /*Muestraeliconoenlavistaresponsivede768px*/max-width: 30px;
+        position: absolute;
+        top: 56%;
+        transform: translateY(-50%);
+        right: 27rem;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+}
+        
+    .imagen-whatsaap img {
+        max-width: 39px;
+        display: inline-block;
+        margin-right: 5px;
+        margin-top: 15px; /* Ajusta según sea necesario para la posición vertical */
+        margin-left: 0; /* Ajusta según sea necesario para la posición horizontal */
+    }
+    
+      .imagen-mail {
+        display: block; /* Muestra el icono en la vista responsive de 768px */
+        max-width: 30px;
+        position: absolute;
+        top: 44%;
+        transform: translateY(-50%);
+        right: 20rem;
+    }
+          
+    .imagen-mail img {
+        max-width: 39px;
+        display: inline-block;
+        margin-right: 8px;
+        margin-top: -25px;
+        margin-left: 0; /* Ajusta según sea necesario para la posición horizontal */
+        text-align: center;
     }
 }
-
-
-@media screen and (max-width: 768px) and (min-width:480px) {
-    .informacion-contacto{
-        height: 100vh;
-}
-
-
-@media screen and (max-width: 768px) and (min-width:480px) {
-    .footer{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-top: 750px;
-        height: 5px;
-}
-}
-
-
-
-
 
 
 /** Media Q.**/
@@ -967,6 +1015,5 @@ p, a{
         height: auto;
         margin-top: 1rem;
     }
-}
 }
 
