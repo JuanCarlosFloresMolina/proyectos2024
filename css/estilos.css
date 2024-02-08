@@ -4,6 +4,7 @@
     --azulClaro:#006FE6;
     --blanco:#FEFCFB;
     --morado:#5812c6;
+    --naranjo:orange;
     --titulos:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --parrafos:'Montserrat', sans-serif;
     --parrafos2:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -644,7 +645,7 @@ p, a{
         
     }
     .servicios {
-        padding-top: 5rem;
+        padding-top: 15rem;
     }
     .servicios h2{
         font-size: 5rem;
@@ -714,18 +715,12 @@ p, a{
 
 /** Fin de los Servicios**/
 
-
-
-
-
-
 /**Seccion contacto**/
 
 .contacto{
-    padding-top: 5rem;
+    padding-top: 10rem;
 
 }
-
 .contacto h2{
     text-align: center;
     color: var(--azulClaro);
@@ -810,9 +805,11 @@ p, a{
     padding: 1rem 3rem;
     transition: background-color .3s ease-in-out;
 }
-
+.input-contacto input[type="submit"]{
+    color: var(--blanco);
+}
 .input-contacto input[type="submit"]:hover{
-    background-color: var(--blanco);
+    background-color: var(--naranjo);
     color: var(--azulClaro);
 }
 
@@ -856,31 +853,32 @@ p, a{
       text-align: center;
 }
   
-
-
-
-
-
-
-@media(min-width: 768px) {
+@media screen and (max-width: 768px) and (min-width:480px) {
     .contenido-contacto{
         display: grid;
         grid-template-columns: repeat(2,1fr);
+        max-width: 800px; /* Establece el ancho máximo deseado */
+        width: 100%; /* Para que se ajuste al ancho máximo y sea responsivo */
+        margin: 0 auto; /* Centra el contenedor horizontalmente */
+    /* También puedes ajustar la altura si es necesario */
+        height: 320.5px; 
     }
 }
 
 
-@media(min-width: 768px) {
+@media screen and (max-width: 768px) and (min-width:480px) {
     .informacion-contacto{
         height: 100vh;
 }
 
 
-@media(min-width: 768px) {
+@media screen and (max-width: 768px) and (min-width:480px) {
     .footer{
         display: flex;
         align-items: center;
         justify-content: space-around;
+        margin-top: 750px;
+        height: 5px;
 }
 }
 
