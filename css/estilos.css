@@ -1,0 +1,974 @@
+:root{
+    --oscuro:#07070A;
+    --azulOscuro:#0A1128;
+    --azulClaro:#006FE6;
+    --blanco:#FEFCFB;
+    --morado:#5812c6;
+    --titulos:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --parrafos:'Montserrat', sans-serif;
+    --parrafos2:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* scroll-behavior: smooth; */
+}
+body{
+    font-size: 1.6rem;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+/*Estilos globales*/
+h1, h2, h3{
+    font-family: var(--titulos);
+}
+
+p, a{
+    font-family: var(--parrafos);
+}
+
+.ocultar{
+    display: one;
+}
+
+.contenedor{
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 95%;
+}
+
+.btn{
+  padding: 1rem 4rem;
+  font-weight: bold;
+  font-family: var(--parrafos);
+  font-size: 3rem;
+  color: var(--azulClaro);
+}
+.bordes{
+   border: 2px solid var(--azulClaro);
+   color: var(--azulClaro);
+   text-decoration: none;
+   display: block;
+   text-align: center;
+   transition: background-color .3s ease-in-out;
+}
+@media(min-width: 768px) {
+    .bordes{
+        display: inline-block;
+        margin-top:2rem;
+    }
+}
+
+.bordes:hover{
+    background-color: var(--azulClaro);
+    color: var(--blanco);
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+.azul{
+    background-color: var(--azulClaro);
+}
+
+@keyframes desplazamiento {
+
+    /*desplazamiento incial*/
+
+    0%{
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+}
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/*
+.contactenos .contactar{
+    color: var(--blanco);
+    padding: 1rem 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    background-color: var(--azulClaro);
+    border-radius: 2rem;
+}
+*/
+
+/**encabezado**/
+.encabezado{
+    background-image: url('../img/developer.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 70rem;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+
+}
+
+@media(min-width: 768px) {
+    .encabezado{
+        background-attachment: fixed;
+    }
+}
+.encabezado::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0,0,0,.5);
+    z-index: -1;
+}
+
+/*
+.logo h2{
+    font-size: 3rem;
+}
+
+.logo h2 span{
+    color: var(--azulClaro);
+}
+*/
+
+
+.contenido-navegacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--blanco);
+    box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.navegacion{
+    background-color: var(--blanco);
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    animation: desplazamiento .5s ease-in-out;
+}
+
+@media(min-width: 768px) {
+    .ocultar{
+        display: inline;
+    }
+}
+
+.navegacion a{
+    display: block;
+    margin-left: 15px;
+    font-size: 2rem;
+    padding: 1.1.5rem;
+    color: var(--oscuro);
+    text-decoration: none;
+    transition: background-color .3s ease-in-out;
+ 
+}
+.navegacion a:hover{
+    background-color: var(--azulClaro);
+    color: var(--blanco);
+}
+
+@media(min-width: 768px) {
+    .navegacion a{
+        padding: 1.1.5rem;
+        display: inline;
+
+    }
+    
+}
+@media(min-width: 768px) {
+    .navegacion{
+        position: relative;
+        top: unset;
+        width: auto;
+        background-color: unset;
+        animation: unset;
+    }
+}
+.hamburguesa span{
+    width: 4rem;
+    height: 1rem;
+    border: 3px solid white;
+    background-color: var(--oscuro);
+    display: block;
+}
+
+@media(min-width: 768px) {
+    .hamburguesa{
+        display: none;
+    }
+}
+
+
+
+/**contenido del encabezado**/
+
+@media(min-width: 768px) {
+    .contenido-encabezado {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 85%;
+    }
+    .contenido-encabezado, .formulario-encabezado{
+            flex: 0 0 calc(50% - 1rem);
+    }
+}
+.texto-encabezado h1{
+    font-size:3rem;
+    text-align: center;
+    color: var(--azulClaro);
+    padding-top: 7rem;
+}
+@media(min-width: 768px) {
+    .texto-encabezado h1{
+        font-size: 7rem;
+        text-align: left;
+        padding-top: 0;
+    }
+
+}
+
+.formulario-encabezado{
+    background-color: var(--morado);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 4rem;
+    border-radius: .5rem;
+}
+
+
+
+.formulario-encabezado h2{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 0;
+    color: var(--blanco);
+}
+@media(min-width: 768px) {
+    .formulario-encabezado h2{
+        font-size: 3rem;
+    }
+}
+.input-encabezado{
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.input-encabezado input{
+    width: 100%;
+    padding: 0 1.6rem;
+    height: 4.8rem;
+    border: 1px solid #f1f1f1;
+    border-radius: .5rem;
+    font-family: var(--parrafos);
+    outline: none;
+}
+
+/**ventajas**/
+
+@media(min-width: 768px) {
+    .contenido-ventajas{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+    }
+
+}
+
+.ventajas{
+    padding: 2rem;
+    background-color: var(--morado);
+
+}
+
+.ventaja{
+    color: var(--blanco);
+    text-align: center;
+}
+
+.ventaja i{
+    font-size: 4rem;
+}
+
+.ventaja h3{
+    font-size: 2.5rem;
+    font-family: var(--parrafos2);
+}
+
+.ventaja p{
+    font-size: 2rem;
+    font-family:var(--parrafos2);;
+}
+
+/** Contenido Nosostros */
+
+.contenido-nosotros{ /*Contenedor de Nosotros*/
+    background-color: #f3f5f7;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+    width: 95%;
+    height: 65rem;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.texto-nosotros h3{ /*Titulo quienes Somos*/
+    color: var(--azulClaro);
+    font-size: 65px;
+    margin-top: 5rem;
+    font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+}
+
+.texto-nosotros p { /*Parrafo de Nosotros*/
+    font-size: 16px; /* Tamaño del texto del párrafo */
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 26.4px;
+    text-align: start;
+    margin-top: 10rem;
+}
+
+.nosotros h2 { /*Titulo Acerca de Nosotros*/
+    display: inline-block;
+    padding: 2rem 5rem;
+    color: var(--azulClaro);
+    font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 72px;
+}
+
+.imagen-nosotros img {
+    width: 610px;
+    height: 490px;
+    margin-left: 20px;
+    margin-top: 8rem; /*Separaciónentretextoeimagen*/
+}
+
+/**Esta Linea es Nueva,todos los M-Q hasta el momento todo bien, el quienes Somos */
+
+@media screen and (max-width: 768px) and (min-width:480px) {
+
+    .contenido-nosotros {
+        font-size: 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nosotros h2 { /*Titulo Acerca de Nosotros*/
+        display: inline-block;
+        padding: 2rem 7.5rem;
+        color: var(--azulClaro);
+        font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 72px;
+    }
+    .imagen-nosotros img { /*ImagendeNosotros*/
+        width: 410px;
+        height: 447px;
+        margin-left: 20px;
+        margin-top: 11rem; /*Separaciónentretextoeimagen*/
+    }
+    .texto-nosotros p { /*Parrafo de Nosotros*/
+        font-size: 15px; /* Tamaño del texto del párrafo */
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 21.4px;
+        text-align:start ;
+        margin-top: 6rem;
+    }
+    .texto-nosotros h3{ /*Titulo quienes Somos*/
+        color: var(--azulClaro);
+        font-size: 3rem;
+        margin-top: 1.5rem;
+        font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        text-align: center;
+    }
+}
+/**Por Fin quedo todo bien, el quienes Somos */
+
+/** Mision Oficial*/
+
+
+.contenido-mision{ /*Contenedor de Nosotros*/
+    background-color: #f3f5f7;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+    width: 95%;
+    height: 65rem;
+    margin: auto;
+    border-radius: 25px;
+    margin-top: 4rem;
+}
+
+.texto-mision h3{ /*Titulo quienes Somos*/
+    color: var(--azulClaro);
+    font-size: 65px;
+    margin-top: 5rem;
+    font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.texto-mision p { /*Parrafo de Nosotros*/
+    font-size: 16px; /* Tamaño del texto del párrafo */
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 26.4px;
+    text-align: start;
+    margin-top: 10rem;
+}
+
+.mision h2 { /*Titulo Acerca de Nosotros*/
+    display: inline-block;
+    padding: 2rem 5rem;
+    color: var(--azulClaro);
+    font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 72px;
+}
+
+.imagen-mision img { /*Imagen de Nosotros */
+    width: 610px;
+    height: 490px;
+    margin-left: 20px; /* Separación entre texto e imagen */
+    margin-top: 8rem;
+}
+
+
+@media screen and (max-width: 768px) and (min-width:480px) {
+    .contenido-mision {
+        font-size: 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .mision h2 { /*Titulo Acerca de Nosotros*/
+        display: inline-block;
+        padding: 2rem 7.5rem;
+        color: var(--azulClaro);
+        font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 72px;
+    }
+    .imagen-mision img { /*Imagen de Nosotros */
+        width: 410px;
+        height: 447px;
+        margin-left: 20px; /* Separación entre texto e imagen */
+        margin-top: 11rem;
+    }
+    .texto-mision p { /*Parrafo de Nosotros*/
+        font-size: 15px; /* Tamaño del texto del párrafo */
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 21.4px;
+        text-align: start;
+        margin-top: 6rem;
+    }
+    .texto-mision h3{ /*Titulo quienes Somos*/
+        color: var(--azulClaro);
+        font-size: 3rem;
+        margin-top: 1.5rem;
+        font-family: "Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        text-align: center;
+    }
+}
+
+/** Vision Oficial*/
+
+
+.contenido-vision{
+    /*ContenedordeNosotros*/background-color: #f3f5f7;
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+    width: 95%;
+    height: 65rem;
+    margin: auto;
+    border-radius: 25px;
+    margin-top: 4rem;
+}
+.texto-vision h3{ /*Titulo quienes Somos*/
+    color: var(--azulClaro);
+    font-size: 65px;
+    margin-top: 5rem;
+    font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.texto-vision p { /*Parrafo de Nosotros*/
+    font-size: 16px; /* Tamaño del texto del párrafo */
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 26.4px;
+    text-align: start;
+    margin-top: 10rem;
+}
+
+.vision h2 { /*Titulo Acerca de Nosotros*/
+    display: inline-block;
+    padding: 2rem 5rem;
+    color: var(--azulClaro);
+    font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 72px;
+}
+.imagen-vision img { /*Imagen de Nosotros */
+    width: 610px;
+    height: 490px;
+    margin-left: 20px; /* Separación entre texto e imagen */
+    margin-top: 8rem;
+}
+
+/**Esta Linea es Nueva,todos los M-Q hasta el momento todo bien, el Vision */
+
+@media screen and (max-width: 768px) and (min-width:480px) {
+    .contenido-vision {
+        font-size: 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .vision h2 { /*Titulo Acerca de Nosotros*/
+        display: inline-block;
+        padding: 2rem 7.5rem;
+        color: var(--azulClaro);
+        font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 72px;
+    }
+    .imagen-vision img { /*Imagen de Nosotros */
+        width: 410px;
+        height: 447px;
+        margin-left: 20px; /* Separación entre texto e imagen */
+        margin-top: 11rem;
+    }
+    .texto-vision p { /*Parrafo de Nosotros*/
+        font-size: 15px; /* Tamaño del texto del párrafo */
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 21.4px;
+        text-align: start;
+        margin-top: 6rem;
+    }
+    .texto-vision h3{ /*Titulo quienes Somos*/
+        color: var(--azulClaro);
+        font-size: 3rem;
+        margin-top: 1.5rem;
+        font-family:"Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        text-align: center;
+    }
+}
+
+/**Por Fin quedo todo bien, el vision */
+
+
+/** Contenido Servicios */
+.contenido-servicios{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4rem;
+    
+}
+.servicios {
+    padding-top: 5rem;
+}
+
+.servicios h2{
+    font-size: 5rem;
+    text-align: center;
+    color: var(--azulClaro);
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.servicio i{
+    background-color: var(--morado);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    font-size: 3rem;
+    box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.servicio h3{
+    font-size: 2.2rem;
+    color: var(--azulOscuro);
+}
+
+.servicio p{
+    font-size: 1.8rem;
+    text-align: center;
+}
+.imagen-soporte img{
+    width: 273px;
+    height: 200px;
+    text-align: center;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.servicio:hover{
+    cursor: pointer;
+}
+
+.servicio:hover .fas {
+    background-color: orange;
+    color: var(--azulClaro);
+}
+
+/**Esta Linea es Nueva,todos los M-Q hasta el momento todo bien, Servicios */
+
+@media screen and (max-width: 768px) and (min-width:480px) {
+    .contenido-servicios{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 4rem;
+        
+    }
+    .servicios {
+        padding-top: 5rem;
+    }
+    .servicios h2{
+        font-size: 5rem;
+        text-align: center;
+        color: var(--azulClaro);
+        margin-top: 1rem;
+    }
+    .servicio{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    .servicio i{
+        background-color: var(--morado);
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--blanco);
+        font-size: 3rem;
+        box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+        transition: all .3s ease-in-out;
+    }
+    .servicio h3{
+        font-size: 2.2rem;
+        color: var(--azulOscuro);
+        text-align: center;
+    }
+    .servicio p{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .imagen-soporte{
+        width: 100%;
+        max-width: 350px; /* Ajusta el ancho máximo según tus necesidades */
+        margin: 0 auto;
+        height: 50%;
+        text-align: center;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 10px; 
+        margin-left: 7%; /* Añade un margen izquierdo */
+        margin-right: 2%; /* Añade un margen derecho */
+    }
+
+    .imagen-soporte img{
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 3px;
+    }
+    
+    .servicio:hover{
+        cursor: pointer;
+    }
+
+    .servicio:hover .fas {
+        background-color:red;
+        color: var(--azulClaro);
+    }
+    
+}
+
+/** Fin de los Servicios**/
+
+
+
+
+
+
+/**Seccion contacto**/
+
+.contacto{
+    padding-top: 5rem;
+
+}
+
+.contacto h2{
+    text-align: center;
+    color: var(--azulClaro);
+    font-size: 5rem;
+}
+
+.informacion-contacto{
+    background-image: url('../img/Soft33.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.informacion-contacto::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.informacion-contacto h3{
+    font-size: 4rem;
+    text-align: center;
+}
+.informacion-contacto p{
+    font-size: 2rem;
+    margin-top: 25px;
+}
+
+.informacion-contacto h3, .informacion-contacto p{
+    color: var(--blanco);
+}
+.formulario-contacto{
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--morado);
+}
+
+.formulario-contacto h2{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 15rem;
+    color: var(--blanco);
+
+}
+
+.input-contacto label{
+    color: var(--blanco);
+    font-family: var(--parrafos);
+    display: block;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+.input-contacto input{
+    padding: 1.2rem 1rem;
+    font-family: var(--parrafos);
+}
+
+.input-contacto input, .input-contacto textarea{
+    width: 100%;
+    outline: none;
+}
+
+.input-contacto textarea{
+    resize: none;
+}
+
+.input-contacto input[type="submit"]{
+    width: auto;
+    padding: 1rem 3rem;
+    transition: background-color .3s ease-in-out;
+}
+
+.input-contacto input[type="submit"]:hover{
+    background-color: var(--blanco);
+    color: var(--azulClaro);
+}
+
+.footer .logo h2, .footer p{
+    text-align: center;
+}
+
+.imagen-whatsaap {
+    max-width: 30px; /* Establece el tamaño máximo del contenedor */
+    position: absolute; /* Posiciona la imagen de forma absoluta con respecto al contenedor padre */
+    top: 50%; /* Coloca la imagen en el centro vertical del contenedor */
+    transform: translateY(-50%); /* Ajusta la posición vertical de la imagen */
+    right: 5px; /* Ajusta la distancia desde el borde derecho según sea necesario */
+}
+    
+.imagen-whatsaap img {
+    max-width: 40px; /* Establece el tamaño máximo del contenedor */
+    display: inline-block; /* Permite ajustar el vertical-align */
+    margin-right: 5px; /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+    margin-top: 192px;
+    margin-left: -58rem;
+    margin-top: 115px;
+}
+
+  
+.imagen-mail {
+      max-width: 30px; /* Establece el tamaño máximo del contenedor */
+      position: absolute; /* Posiciona la imagen de forma absoluta con respecto al contenedor padre */
+      top: 50%; /* Coloca la imagen en el centro vertical del contenedor */
+      transform: translateY(-50%); /* Ajusta la posición vertical de la imagen */
+      right: 5px; /* Ajusta la distancia desde el borde derecho según sea necesario */
+      text-align: center;
+}
+      
+.imagen-mail img {
+      max-width: 40px; /* Establece el tamaño máximo del contenedor */
+      display: inline-block; /* Permite ajustar el vertical-align */
+      margin-right: 5px; /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+      margin-left: -133rem;
+      margin-top: 263px;
+      text-align: center;
+}
+  
+
+
+
+
+
+
+@media(min-width: 768px) {
+    .contenido-contacto{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media(min-width: 768px) {
+    .informacion-contacto{
+        height: 100vh;
+}
+
+
+@media(min-width: 768px) {
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+}
+}
+
+
+
+
+
+
+/** Media Q.**/
+
+/* Ajustes para móviles pequeños */
+@media (max-width: 479px) {
+    .encabezado {
+        min-height: 40rem;
+    }
+
+    .contenido-navegacion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hamburguesa {
+        display: block;
+    }
+
+    .texto-encabezado h1 {
+        text-align: center;
+    }
+
+    .titulo-formulario h2 {
+        margin-bottom: 0;
+    }
+
+    .ventajas,
+    .servicios {
+        padding: 1rem;
+    }
+
+    .servicio {
+        margin-bottom: 1rem;
+    }
+
+    .imagen-soporte img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contenido-servicios {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+/* Ajustes para móviles pequeños en la sección Nosotros */
+@media (max-width: 479px) {
+    .contenido-nosotros {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .nosotros h2 {
+        padding: 2rem 0;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .texto-nosotros {
+        text-align: center;
+    }
+
+    .texto-nosotros h3 {
+        font-size: 32px;
+        margin-top: 1.5rem;
+    }
+
+    .texto-nosotros p {
+        font-size: 14px;
+        margin-top: 1rem;
+        text-align: justify;
+    }
+
+    .imagen-nosotros img {
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+}
+}
+
