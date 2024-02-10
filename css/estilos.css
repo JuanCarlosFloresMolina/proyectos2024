@@ -1,3 +1,4 @@
+
 :root{
     --oscuro:#07070A;
     --azulOscuro:#0A1128;
@@ -132,17 +133,6 @@ p, a{
     background-color:rgba(0,0,0,.5);
     z-index: -1;
 }
-
-/*
-.logo h2{
-    font-size: 3rem;
-}
-
-.logo h2 span{
-    color: var(--azulClaro);
-}
-*/
-
 
 .contenido-navegacion{
     display: flex;
@@ -812,7 +802,7 @@ p, a{
     padding: 1.2rem 1rem;
     font-family: var(--parrafos);
 }
-.input-contacto :hover{
+.input-contacto input:hover{
     background-color: var(--naranjo);
 }
 .input-contacto input, .input-contacto textarea{
@@ -823,7 +813,9 @@ p, a{
 .input-contacto textarea{
     resize: none;
 }
-
+.input-contacto textarea:hover{
+    background-color: var(--naranjo);
+}
 .input-contacto input[type="submit"]{
     width: auto;
     padding: 1rem 3rem;
@@ -854,11 +846,11 @@ p, a{
 }
 
 .imagen-whatsaap {
-    max-width: 30px; /* Establece el tamaño máximo del contenedor */
-    position: absolute; /* Posiciona la imagen de forma absoluta con respecto al contenedor padre */
-    top: 47%; /* Coloca la imagen en el centro vertical del contenedor */
-    transform: translateY(-50%); /* Ajusta la posición vertical de la imagen */
-    right: 5px; /* Ajusta la distancia desde el borde derecho según sea necesario */
+    max-width: 30px;
+    position: absolute;
+    top: 47%;
+    transform: translateY(-50%);
+    right: 5px;
 }
     
 .imagen-whatsaap img {
@@ -905,7 +897,7 @@ p, a{
         -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         -o-transform: translateY(-50%);
-}
+    }
         
     .imagen-whatsaap img {
         max-width: 39px;
@@ -934,86 +926,148 @@ p, a{
     }
 }
 
-
+/*
 /** Media Q.**/
+/* Encabezado */
 
-/* Ajustes para móviles pequeños */
-@media (max-width: 479px) {
-    .encabezado {
-        min-height: 40rem;
-    }
-
-    .contenido-navegacion {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hamburguesa {
-        display: block;
-    }
-
-    .texto-encabezado h1 {
-        text-align: center;
-    }
-
-    .titulo-formulario h2 {
-        margin-bottom: 0;
-    }
-
-    .ventajas,
-    .servicios {
-        padding: 1rem;
-    }
-
-    .servicio {
-        margin-bottom: 1rem;
-    }
-
-    .imagen-soporte img {
-        width: 100%;
-        height: auto;
-    }
-
-    .contenido-servicios {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
+@media (min-width: 360px) {
+  .encabezado {
+    background-attachment: fixed;
+  }
+  .contenido-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Mueve a la Izquierda Icono Hamburguesa*/
+    background-color: var(--blanco);
+    box-shadow: 10px 10px 16px -6px rgba(0, 0, 0, 0.45);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+ .navegacion a {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .hamburguesa span {
+    width: 4rem;
+    height: 1rem;
+    border: 3px solid white;
+    background-color: var(--oscuro);
+    display: block;
+    cursor: pointer; /* Cambia el cursor a pointer para indicar que es interactivo */
+  }
 }
 
-/* Ajustes para móviles pequeños en la sección Nosotros */
-@media (max-width: 479px) {
-    .contenido-nosotros {
+@media (max-width: 360px) {
+  .navegacion a {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+@media (max-width: 768px) {
+    .hamburguesa {
+      display: block;
+    }
+    .navegacion {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    .navegacion.ocultar {
+        display: none;
+    }
+    .contenido-navegacion {
+        justify-content: space-around;
+  }
+}
+/* Ocultar el icono hamburguesa en dispositivos más grandes */
+
+@media (min-width: 769px) {
+    .hamburguesa {
+      display: none;
+    }
+    .encabezado {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+    .navegacion {
+        display: flex;
+        align-items: center;
+    }
+    .navegacion a {
+        margin-left: 15px;
+    }
+    .texto-encabezado h1 {
+        font-size: 3rem; /* Ajusta según tus necesidades para dispositivos móviles */
+        text-align: center;
+        color: var(--azulClaro);
+        padding: 2rem; /* Ajusta según tus necesidades para dispositivos móviles */
+      }
+      .formulario-encabezado {
+        background-color: var(--morado);
+        display: flex;
         flex-direction: column;
         align-items: center;
-        height: auto;
-        padding: 15px;
-    }
-
-    .nosotros h2 {
-        padding: 2rem 0;
-        font-size: 36px;
+        padding: 2rem; /* Ajusta según tus necesidades para dispositivos móviles */
+        border-radius: 0.5rem;
+      }
+      .formulario-encabezado h2 {
+        font-size: 2rem; /* Ajusta según tus necesidades para dispositivos móviles */
         text-align: center;
-    }
-
-    .texto-nosotros {
-        text-align: center;
-    }
-
-    .texto-nosotros h3 {
-        font-size: 32px;
-        margin-top: 1.5rem;
-    }
-
-    .texto-nosotros p {
-        font-size: 14px;
-        margin-top: 1rem;
-        text-align: justify;
-    }
-
-    .imagen-nosotros img {
+        margin-top: 0;
+        color: var(--blanco);
+      }
+      
+      .input-encabezado {
+        margin-bottom: 1rem;
         width: 100%;
-        height: auto;
-        margin-top: 1rem;
-    }
+      }
+      
+      .input-encabezado input {
+        width: 100%;
+        padding: 0 1.6rem;
+        height: 3rem; /* Ajusta según tus necesidades para dispositivos móviles */
+        border: 1px solid #f1f1f1;
+        border-radius: 0.5rem;
+        font-family: var(--parrafos);
+        outline: none;
+      }
+
 }
 
+/* Ventajas */
+@media (max-width: 360px) {
+  .contenido-ventajas {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.ventajas {
+  padding: 2rem;
+  background-color: var(--morado);
+}
+
+.ventaja {
+  color: var(--blanco);
+  text-align: center;
+}
+
+.ventaja i {
+  font-size: 4rem;
+}
+
+.ventaja h3 {
+  font-size: 2.5rem;
+  font-family: var(--parrafos2);
+}
+
+.ventaja p {
+  font-size: 2rem;
+  font-family: var(--parrafos2);
+}
+}
